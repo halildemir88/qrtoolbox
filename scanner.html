@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Scanner — Free, Private, No Upload</title>
+<meta name="description" content="Scan QR codes from an image or your camera instantly in your browser. 100% private, no upload, no signup, free.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▦</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="index.html" class="logo">▦ QR Toolbox</a>
+    <nav class="site-nav">
+      <a href="index.html">Generate</a>
+      <a href="scanner.html" class="active">Scan / Read</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Scan a QR Code</h1>
+  <p class="sub">Upload an image or use your camera. Decoding happens entirely in your browser — nothing is uploaded.</p>
+
+  <div class="actions">
+    <button id="cameraBtn" class="btn btn-primary">Use Camera</button>
+    <button id="stopCameraBtn" class="btn" hidden>Stop Camera</button>
+  </div>
+
+  <video id="video" playsinline hidden></video>
+  <canvas id="canvas" hidden></canvas>
+
+  <div id="dropzone" class="dropzone">
+    <input type="file" id="fileInput" accept="image/*" hidden>
+    <div class="dz-content">
+      <div class="dz-icon">📷</div>
+      <p><strong>Click to choose an image</strong> or drag &amp; drop it here</p>
+      <p class="dz-hint">PNG, JPG, WebP · No signup</p>
+    </div>
+  </div>
+
+  <div class="msg" id="msg"></div>
+
+  <div id="resultBox" class="result-box" hidden>
+    <strong>Decoded content:</strong>
+    <div id="resultText"></div>
+  </div>
+
+  <div class="actions" id="resultActions" hidden>
+    <button id="copyBtn" class="btn">Copy</button>
+    <a id="openLink" class="btn" href="#" target="_blank" rel="noopener" hidden>Open Link</a>
+  </div>
+
+  <section class="info">
+    <h2>Why use this scanner?</h2>
+    <ul>
+      <li><strong>Private by design</strong> — decoding happens locally in your browser. Your image and camera feed never leave your device.</li>
+      <li><strong>Two ways to scan</strong> — upload a saved image or use your live camera.</li>
+      <li><strong>No signup</strong> — no account, no ads, no limits.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Can I scan a QR code from a screenshot?</summary>
+        <p>Yes — drag and drop or upload any image file containing a QR code, including screenshots.</p>
+      </details>
+      <details>
+        <summary>Is my camera feed uploaded anywhere?</summary>
+        <p>No. The video is processed frame-by-frame locally in your browser. Nothing is sent to a server.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Made with a browser. No servers were harmed (or used) in the making of this tool.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+<script src="scanner.js"></script>
+</body>
+</html>

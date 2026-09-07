@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://halildemir88.github.io/qrtoolbox/sitemap.xml

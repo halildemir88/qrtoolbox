@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generator — Free, Private, No Upload</title>
+<meta name="description" content="Generate QR codes for text, URLs, Wi-Fi and more instantly in your browser. 100% private, no upload, no signup, no watermark, free.">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▦</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a href="index.html" class="logo">▦ QR Toolbox</a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Generate</a>
+      <a href="scanner.html">Scan / Read</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>Generate a QR Code</h1>
+  <p class="sub">Type text, a URL, or Wi-Fi details below. The QR code is created entirely in your browser — nothing is sent to a server.</p>
+
+  <textarea id="textInput" rows="3" placeholder="https://example.com"></textarea>
+
+  <div class="options">
+    <label>
+      Size:
+      <select id="sizeSelect">
+        <option value="200">200 × 200</option>
+        <option value="300" selected>300 × 300</option>
+        <option value="500">500 × 500</option>
+        <option value="800">800 × 800</option>
+      </select>
+    </label>
+    <label>
+      Error correction:
+      <select id="levelSelect">
+        <option value="L">Low</option>
+        <option value="M" selected>Medium</option>
+        <option value="Q">Quartile</option>
+        <option value="H">High</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="qr-preview" id="qrPreview"></div>
+
+  <div class="actions">
+    <button id="downloadBtn" class="btn btn-primary">Download PNG</button>
+  </div>
+
+  <section class="info">
+    <h2>Why use this generator?</h2>
+    <ul>
+      <li><strong>Private by design</strong> — the QR code is drawn locally in your browser. Nothing you type is sent anywhere.</li>
+      <li><strong>No limits</strong> — no watermark, no signup, unlimited codes.</li>
+      <li><strong>Any text</strong> — URLs, Wi-Fi credentials, contact info, plain text.</li>
+    </ul>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details>
+        <summary>How do I make a Wi-Fi QR code?</summary>
+        <p>Use the format <code>WIFI:T:WPA;S:YourNetworkName;P:YourPassword;;</code> as the input text. Most phone cameras will offer to join the network when scanned.</p>
+      </details>
+      <details>
+        <summary>What does error correction level mean?</summary>
+        <p>Higher levels (Q, H) let the code still scan even if partly damaged or covered, at the cost of a denser pattern. Medium is fine for most uses.</p>
+      </details>
+      <details>
+        <summary>Is my data uploaded anywhere?</summary>
+        <p>No. The QR code is generated entirely in your browser using JavaScript. Nothing you enter is sent to a server.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">Made with a browser. No servers were harmed (or used) in the making of this tool.</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="generator.js"></script>
+</body>
+</html>
